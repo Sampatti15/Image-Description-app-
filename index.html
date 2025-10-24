@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Description App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ Image Description</h1>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">📁</div>
+                        <h3>Drop your image here</h3>
+                        <p>or click to browse files</p>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                        <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+                            Browse Files
+                        </button>
+                    </div>
+                </div>
+
+                <div class="paste-section">
+                    <h4>Or paste from clipboard:</h4>
+                    <button class="paste-btn" id="pasteBtn">📋 Paste Image</button>
+                </div>
+            </div>
+
+            <div class="image-preview" id="imagePreview" style="display: none;">
+                <img id="previewImg" alt="Preview">
+                <button class="remove-btn" id="removeBtn">✕</button>
+            </div>
+
+            <div class="description-section" id="descriptionSection" style="display: none;">
+                <h3>Image Description:</h3>
+                <div class="description-content" id="descriptionContent">
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Analyzing image...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
